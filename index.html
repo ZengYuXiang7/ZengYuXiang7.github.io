@@ -39,6 +39,11 @@ main{min-width:0;background:#fff;padding:28px clamp(22px,2vw,36px) 10px;border:1
 @media(max-width:620px){.place{display:flex;grid-column:1 / -1;margin-top:12px}.profile-links{gap:10px 18px}.paper-links a{min-height:32px;display:inline-flex;align-items:center}.profile-links a{min-height:32px}}
 .research-topics{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}.research-topics a{display:inline-flex;align-items:center;flex-wrap:wrap;gap:5px;padding:4px 8px;border:1px solid var(--line);border-radius:5px;font-size:12px;line-height:1.7;color:#536174;background:#fafbfc}.research-topics a:hover{border-color:var(--accent);text-decoration:none}.research-topics .featured-topic{border-color:#e2b5b8;background:#fff7f7}.research-topics strong{color:var(--accent);font-weight:600}.research-topics .topic-venue.ccf-c{background:#8eba3a;color:#fff}.topic-venue{padding:1px 5px;border-radius:3px;background:var(--accent);color:#fff;font-weight:600;white-space:nowrap}
 #about{margin-bottom:24px}#about h2{margin-bottom:12px}#about .intro{line-height:1.75}#about .intro p{margin-bottom:8px}#about .research-counts{margin-top:10px;padding-top:9px;gap:8px 20px}#about .research-counts strong{font-size:21px}#news{margin-bottom:26px}#news h2{margin-bottom:12px;padding-bottom:8px}#news .news{line-height:1.6;gap:12px}#news .news+.news{padding-top:6px}
+
+.compact-card,.achievement-list li,#news .news{background:#fafbfc;border:1px solid #e6e9ee;border-left:3px solid var(--accent);border-radius:6px;padding:8px 12px;margin-bottom:8px;min-width:0;overflow-wrap:anywhere}
+#news .news+.news{padding-top:8px}.achievement-list li{gap:12px}.achievement-list h3{line-height:1.55;margin-bottom:3px}.achievement-list p{line-height:1.65;margin-top:2px}.education{display:block}.education-entry{display:grid;grid-template-columns:98px minmax(0,1fr);gap:12px}.education>.education-entry{margin-bottom:8px}.education-entry p{line-height:1.65}.education-entry .date{padding-top:0}.compact-card:last-child,.achievement-list li:last-child,#news .news:last-child{margin-bottom:0}#contact .compact-card p{margin-bottom:6px;line-height:1.65}#contact .compact-card .paper-links{margin-top:6px}#about .compact-card{padding:8px 12px}
+@media(max-width:820px){.education-entry{grid-template-columns:80px minmax(0,1fr)}}
+@media(max-width:620px){.education-entry{grid-template-columns:minmax(0,1fr);gap:4px}.education-entry>div{margin-bottom:0}.achievement-list li{gap:4px}.compact-card,.achievement-list li,#news .news{padding:8px 10px}}
 </style>
 </head>
 <body>
@@ -78,6 +83,7 @@ main{min-width:0;background:#fff;padding:28px clamp(22px,2vw,36px) 10px;border:1
     <main id="main-content">
       <section id="about"><p class="eyebrow"><span class="en">HUNAN UNIVERSITY · COMPUTER SCIENCE AND TECHNOLOGY</span><span class="zh">湖南大学 · 计算机科学与技术</span></p>
         <h2><span class="section-emoji" aria-hidden="true">🧑‍🎓</span><span class="en">About Me</span><span class="zh">个人简介</span></h2>
+        <div class="compact-card about-content">
         <div class="intro en">
           <p>I am a Ph.D. student at the <strong>College of Computer Science and Electronic Engineering, Hunan University</strong>, supervised by <strong><a href="https://csee.hnu.edu.cn/people/xiekun" target="_blank" rel="noopener noreferrer">Prof. Kun Xie</a></strong>. I received my bachelor's degree in Computer Science and Technology from Shantou University in 2024. I joined Hunan University in 2024 as a master's student in Electronic Information (Computer Technology) and continued into the doctoral stage in 2025.</p>
           <p>My research focuses on <strong>Deep Learning</strong> and <strong>Data Mining</strong>. I welcome discussions and collaborations on related research topics. Feel free to contact me at <a href="mailto:zengyuxiang@hnu.edu.cn">zengyuxiang@hnu.edu.cn</a>.</p>
@@ -92,6 +98,7 @@ main{min-width:0;background:#fff;padding:28px clamp(22px,2vw,36px) 10px;border:1
           <a href="#paper-ispa-gnn"><span class="en">Graph Neural Networks</span><span class="zh">图神经网络</span><strong>ISPA-GNN ↓</strong><span class="topic-venue ccf-c">ICPADS 2022</span></a>
         </div>
         <div class="research-counts"><span><strong>15</strong><span class="en">research papers</span><span class="zh">篇论文</span></span><span><strong>8</strong><span class="en">accepted / published</span><span class="zh">篇已接收 / 已发表</span></span><span><strong>6</strong><span class="en">invention patents</span><span class="zh">项发明专利</span></span><span><strong>6</strong><span class="en">software copyrights</span><span class="zh">项软件著作权</span></span><span class="award-count"><strong>30+</strong><span class="en">awards</span><span class="zh">项奖项</span><span class="ranking-help"><button class="ranking-help-button" type="button" aria-describedby="awards-tooltip"><span aria-hidden="true">?</span><span class="sr-only en">Award breakdown</span><span class="sr-only zh">奖项数量明细</span></button><span class="ranking-tooltip" id="awards-tooltip" role="tooltip"><span class="en">4 national awards, 9 provincial awards, plus university awards and honors.</span><span class="zh">国家级 4 项、省级 9 项，另有校级奖项与荣誉。</span></span></span></span></div>
+        </div>
       </section>
       
       <section id="news">
@@ -141,16 +148,22 @@ main{min-width:0;background:#fff;padding:28px clamp(22px,2vw,36px) 10px;border:1
       <section id="education">
         <h2><span class="section-emoji" aria-hidden="true">🎓</span><span class="en">Education</span><span class="zh">教育经历</span></h2>
         <div class="education">
+          <div class="compact-card education-entry">
           <span class="date"><span class="en">2025–Present</span><span class="zh">2025–至今</span></span>
           <div><h3><span class="en">Hunan University</span><span class="zh">湖南大学</span></h3><p><span class="en">Ph.D. (Major in Computer Science and Technology)<br>Advisor: <a href="https://csee.hnu.edu.cn/people/xiekun" target="_blank" rel="noopener noreferrer">Prof. Kun Xie</a></span><span class="zh">博士阶段（专业：计算机科学与技术）<br>导师：<a href="https://csee.hnu.edu.cn/people/xiekun" target="_blank" rel="noopener noreferrer">谢鲲教授</a></span></p></div>
+          </div>
+          <div class="compact-card education-entry">
           <span class="date">2024–2025</span>
           <div><h3><span class="en">Hunan University</span><span class="zh">湖南大学</span></h3><p><span class="en">Master (Major in Electronic Information, specializing in Computer Technology)</span><span class="zh">硕士阶段（专业：电子信息，方向：计算机技术）</span></p><p class="note"><span class="en">Continued into the Ph.D. stage in 2025 as part of the same successive master's–doctoral program.</span><span class="zh">2025 年转入硕博连读博士阶段。</span></p></div>
+          </div>
+          <div class="compact-card education-entry">
           <span class="date">2024</span>
           <div><h3><span class="en">Shantou University</span><span class="zh">汕头大学</span></h3><p><span class="en">Bachelor (Major in Computer Science and Technology)<br>Advisor: <a href="https://www.stu.edu.cn/cmac/info/2171/22481.htm" target="_blank" rel="noopener noreferrer">Assoc. Prof. Jianlong Xu</a></span><span class="zh">本科（专业：计算机科学与技术）· 获得学士学位<br>导师：<a href="https://www.stu.edu.cn/cmac/info/2171/22481.htm" target="_blank" rel="noopener noreferrer">许建龙副教授</a></span></p></div>
+          </div>
         </div>
       </section>
 
-<section id="contact"><h2><span class="section-emoji" aria-hidden="true">📬</span><span class="en">Contact</span><span class="zh">联系方式</span></h2><p><span class="en">For research discussions and collaboration, please contact me by email.</span><span class="zh">欢迎通过邮箱交流研究问题与合作想法。</span></p><p><a href="mailto:zengyuxiang@hnu.edu.cn">zengyuxiang@hnu.edu.cn</a></p><p><span class="en">College of Computer Science and Electronic Engineering, Hunan University · Changsha, China</span><span class="zh">湖南大学计算机学院 · 中国长沙</span></p><div class="paper-links"><a href="https://scholar.google.com/citations?user=P-MmG28AAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar ↗</a><a href="https://orcid.org/0009-0006-3982-3735" target="_blank" rel="noopener noreferrer"><span class="en">ORCID ↗</span><span class="zh">ORCID ↗</span></a><a href="https://github.com/ZengYuXiang7" target="_blank" rel="noopener noreferrer"><span class="en">GitHub ↗</span><span class="zh">GitHub ↗</span></a></div></section>
+<section id="contact"><h2><span class="section-emoji" aria-hidden="true">📬</span><span class="en">Contact</span><span class="zh">联系方式</span></h2><div class="compact-card"><p><span class="en">For research discussions and collaboration, please contact me by email.</span><span class="zh">欢迎通过邮箱交流研究问题与合作想法。</span></p><p><a href="mailto:zengyuxiang@hnu.edu.cn">zengyuxiang@hnu.edu.cn</a></p><p><span class="en">College of Computer Science and Electronic Engineering, Hunan University · Changsha, China</span><span class="zh">湖南大学计算机学院 · 中国长沙</span></p><div class="paper-links"><a href="https://scholar.google.com/citations?user=P-MmG28AAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar ↗</a><a href="https://orcid.org/0009-0006-3982-3735" target="_blank" rel="noopener noreferrer"><span class="en">ORCID ↗</span><span class="zh">ORCID ↗</span></a><a href="https://github.com/ZengYuXiang7" target="_blank" rel="noopener noreferrer"><span class="en">GitHub ↗</span><span class="zh">GitHub ↗</span></a></div></div></section>
     </main>
   </div>
   <footer><span>© 2026 Yuxiang Zeng</span><span id="visit-counter" hidden title="Each browser is counted once per day (Beijing time). Totals may take up to 4 hours to update." data-title-en="Each browser is counted once per day (Beijing time). Totals may take up to 4 hours to update." data-title-zh="同一浏览器每天计一次，以北京时间为准；累计数字最多延迟 4 小时更新。"><span class="en">Visits:</span><span class="zh">累计访问：</span> <span id="visit-count"></span></span><span><span class="en">Last updated: October 7, 2026</span><span class="zh">最近更新：2026 年 10 月 7 日</span></span></footer>
